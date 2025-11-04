@@ -1,0 +1,23 @@
+name: Publish to Nuget
+
+on:
+  push:
+    branches: ["main", "test-ci"]
+
+jobs:
+  build:
+    name: Build, publish and deploy
+    runs-on: ubuntu-slim
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.109
+      - name: Build and pack
+        run: dotnet pack -o ./pkgs
+      - name: Publish to Nuget
+        run: |
+          dotnet nuget push ./pkgs/*.nupkg \
+          --api-key ${{ secrets.NUGET_API_KEY }} \
+          --source https://api.nuget.org/v3/index.json
