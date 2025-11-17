@@ -2,7 +2,7 @@ namespace ECommerceBackend.Utils.Database;
 
 public class PostgresConfigurationBuilder
 {
-    PostgresConfiguration Build(string[] args)
+    public PostgresConfiguration Build(string[] args)
     {
         string? host = args.FirstOrDefault(arg => arg.StartsWith("host"))?.Split()?[1];
         string? database = args.FirstOrDefault(arg => arg.StartsWith("database"))?.Split()?[1];
