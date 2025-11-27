@@ -1,9 +1,7 @@
 name: Publish to Nuget
-
 on:
   push:
     branches: ["main", "test-ci"]
-
 jobs:
   build:
     name: Build, publish and deploy
@@ -13,11 +11,12 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 9.0.109
+          dotnet-version: 9.0.x
       - name: Build and pack
         run: dotnet pack -o ./pkgs
       - name: Publish to Nuget
         run: |
           dotnet nuget push ./pkgs/*.nupkg \
           --api-key ${{ secrets.NUGET_API_KEY }} \
-          --source https://api.nuget.org/v3/index.json
+          --source https://api.nuget.org/v3/index.json \
+          --skip-duplicate
