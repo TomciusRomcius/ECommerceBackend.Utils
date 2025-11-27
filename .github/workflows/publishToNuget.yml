@@ -1,7 +1,7 @@
 name: Publish to Nuget
 on:
   push:
-    branches: ["main", "test-ci"]
+    branches: ["master", "test-ci"]
 jobs:
   build:
     name: Build, publish and deploy
