@@ -8,9 +8,9 @@ public class PostgresConfigurationBuilder
         string? database = args.FirstOrDefault(arg => arg.StartsWith("database"))?.Split()?[1];
         string? username = args.FirstOrDefault(arg => arg.StartsWith("username"))?.Split()?[1];
         string? password = args.FirstOrDefault(arg => arg.StartsWith("password"))?.Split()?[1];
-        string? port = args.FirstOrDefault(arg => arg.StartsWith("password"))?.Split()?[1];
+        string? port = args.FirstOrDefault(arg => arg.StartsWith("port"))?.Split()?[1];
 
-        int portNum;
+        int? portNum;
         if (port != null)
         {
             if (!int.TryParse(port, out portNum))
