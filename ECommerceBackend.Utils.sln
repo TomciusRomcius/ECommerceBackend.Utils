@@ -2,7 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerceBackend.Utils", "ECommerceBackend.Utils\ECommerceBackend.Utils.csproj", "{66E98951-2AD2-44C8-9E71-E8EFC7198EF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerceBackend.Utils.Jwt", "ECommerceBackend.Utils.Jwt\ECommerceBackend.Utils.Jwt.csproj", "{20667335-14C5-4EEE-943C-BC39614019D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerceBackend.Utils.Auth", "ECommerceBackend.Utils.Auth\ECommerceBackend.Utils.Auth.csproj", "{54219578-EAEB-4A11-9D0B-1FF665FC8DC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerceBackend.Utils.Jwt", "ECommerceBackend.Utils.Jwt\ECommerceBackend.Utils.Jwt.csproj", "{BC696365-9E0F-45AF-8F98-06C3B65406D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +16,13 @@ Global
 		{66E98951-2AD2-44C8-9E71-E8EFC7198EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66E98951-2AD2-44C8-9E71-E8EFC7198EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66E98951-2AD2-44C8-9E71-E8EFC7198EF3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{20667335-14C5-4EEE-943C-BC39614019D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20667335-14C5-4EEE-943C-BC39614019D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20667335-14C5-4EEE-943C-BC39614019D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20667335-14C5-4EEE-943C-BC39614019D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54219578-EAEB-4A11-9D0B-1FF665FC8DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54219578-EAEB-4A11-9D0B-1FF665FC8DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54219578-EAEB-4A11-9D0B-1FF665FC8DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54219578-EAEB-4A11-9D0B-1FF665FC8DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC696365-9E0F-45AF-8F98-06C3B65406D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC696365-9E0F-45AF-8F98-06C3B65406D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC696365-9E0F-45AF-8F98-06C3B65406D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC696365-9E0F-45AF-8F98-06C3B65406D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
