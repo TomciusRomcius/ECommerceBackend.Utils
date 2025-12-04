@@ -2,3 +2,4 @@
 **/obj
 *.nupkg
 .idea
+*.DotSettings.user
