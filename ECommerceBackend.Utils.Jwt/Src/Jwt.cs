@@ -6,6 +6,7 @@ public class JwtAuthConfiguration
     public required string Audience { get; set; }
     public required string SigningKey { get; set; }
     public required int LifetimeMinutes { get; set; }
+    public required int ClockSkewMinutes { get; set; }
 }
 
 public static class ActorTypes
