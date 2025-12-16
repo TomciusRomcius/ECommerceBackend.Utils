@@ -37,14 +37,10 @@ public static class JwtUserReader
         }
         else if (actor == ActorTypes.Microservice)
         {
-            return new MicroserviceJwtClaims
+            return new JwtClaims
             {
                 Issuer = issuer,
                 Actor = actor,
-                Permissions = httpContext.User.Claims
-                    .Where(c => c.Type == ClaimTypes.Role)
-                    .Select(c => c.Value)
-                    .ToArray()
             };
         }
 
