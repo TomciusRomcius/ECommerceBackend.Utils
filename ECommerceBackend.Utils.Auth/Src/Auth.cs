@@ -78,7 +78,7 @@ public static class AuthSetup
         return sc;
     }
 
-    public static IApplicationBuilder UseApplicationAuth(this IApplicationBuilder ab, JwtAuthConfiguration config)
+    public static IApplicationBuilder UseApplicationAuth(this IApplicationBuilder ab)
     {
         ab.UseAuthentication();
         ab.UseAuthorization();
