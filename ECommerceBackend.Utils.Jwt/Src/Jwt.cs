@@ -14,7 +14,7 @@ public static class ActorTypes
     public static string Microservice { get; } = "microservice";
 }
 
-public abstract class JwtClaims
+public class JwtClaims
 {
     public required string Issuer { get; init; }
     public required string Actor { get; init; }
@@ -24,9 +24,4 @@ public class ClientJwtClaims : JwtClaims
 {
     public required string UserId { get; init; }
     public required string Email { get; init; }
-}
-
-public class MicroserviceJwtClaims : JwtClaims
-{
-    public string[] Permissions { get; set; } = [];
 }
