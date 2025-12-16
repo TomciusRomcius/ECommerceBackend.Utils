@@ -4,6 +4,7 @@ using ECommerceBackend.Utils.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
@@ -50,21 +51,30 @@ public static class JwtUserReader
 
 public static class AuthSetup
 {
-    public static IServiceCollection AddApplicationAuth(this IServiceCollection sc, JwtAuthConfiguration config)
+    public static IServiceCollection AddApplicationAuth(this IServiceCollection sc, WebApplicationBuilder builder)
     {
-        sc.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        IConfiguration jwtSection = builder.Configuration.GetSection("Jwt");
+        sc.AddOptions<JwtAuthConfiguration>()
+            .Bind(jwtSection)
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
+
+        // AddOptions validates JsonAuthConfiguration, whether it is null
+        JwtAuthConfiguration jwtConfig = jwtSection.Get<JwtAuthConfiguration>()!;
+
+        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
             {
-                SecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.SigningKey));
-                options.Authority = config.Issuer;
-                options.Audience = config.Audience;
+                SecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig.SigningKey));
                 options.TokenValidationParameters.ClockSkew = TimeSpan.FromMinutes(1);
-
-                options.TokenValidationParameters.ValidateAudience = true;
-                options.TokenValidationParameters.ValidateIssuer = true;
+                options.TokenValidationParameters.IssuerSigningKey = key;
                 options.TokenValidationParameters.ValidateIssuerSigningKey = true;
+                options.TokenValidationParameters.ValidateIssuer = true;
+                options.TokenValidationParameters.ValidIssuers = [jwtConfig.Issuer];
+                options.TokenValidationParameters.ValidateAudience = false;
                 options.TokenValidationParameters.ValidateLifetime = true;
             });
+
         return sc;
     }
 
