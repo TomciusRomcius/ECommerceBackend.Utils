@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-      <PackageId>Tomas.ECommerceBackend.Utils.Auth</PackageId>
-      <Version>1.0.3</Version>
-      <Authors>Tomas</Authors>
-    </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>Tomas.ECommerceBackend.Utils.Auth</PackageId>
+    <Version>1.0.5</Version>
+    <Authors>Tomas</Authors>
+  </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
