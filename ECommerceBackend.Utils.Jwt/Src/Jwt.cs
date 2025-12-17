@@ -10,8 +10,8 @@ public class JwtAuthConfiguration
 
 public static class RoleTypes
 {
-    public static string Client { get; } = "client";
-    public static string Admin { get; } = "admin";
+    public const string Client = "client";
+    public const string Admin = "admin";
 }
 
 public class JwtClaims
