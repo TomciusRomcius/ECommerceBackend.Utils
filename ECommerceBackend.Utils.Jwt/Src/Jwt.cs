@@ -9,16 +9,16 @@ public class JwtAuthConfiguration
     public required int ClockSkewMinutes { get; set; }
 }
 
-public static class ActorTypes
+public static class RoleTypes
 {
     public static string Client { get; } = "client";
-    public static string Microservice { get; } = "microservice";
+    public static string Admin { get; } = "admin";
 }
 
 public class JwtClaims
 {
     public required string Issuer { get; init; }
-    public required string Actor { get; init; }
+    public required string Roles { get; init; }
 }
 
 public class ClientJwtClaims : JwtClaims
