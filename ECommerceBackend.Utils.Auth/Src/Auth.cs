@@ -1,4 +1,3 @@
-using System.Security.Claims;
 using System.Text;
 using ECommerceBackend.Utils.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,9 +10,9 @@ using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegiste
 
 namespace ECommerceBackend.Utils.Auth;
 
-public static class JwtUserReader
+public static class JwtClaimsReader
 {
-    public static JwtClaims? ReadJwt(HttpContext httpContext)
+    public static JwtClaims? Read(HttpContext httpContext)
     {
         string? issuer = httpContext.User.Claims
             .FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Iss)
