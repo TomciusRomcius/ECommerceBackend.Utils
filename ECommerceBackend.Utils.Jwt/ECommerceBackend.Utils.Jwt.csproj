@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-      <PackageId>Tomas.ECommerceBackend.Utils.Jwt</PackageId>
-      <Version>1.0.1</Version>
-      <Authors>Tomas</Authors>
-    </PropertyGroup>
-    <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>Tomas.ECommerceBackend.Utils.Jwt</PackageId>
+    <Version>1.0.2</Version>
+    <Authors>Tomas</Authors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
 
 </Project>
