@@ -3,7 +3,6 @@ namespace ECommerceBackend.Utils.Jwt;
 public class JwtAuthConfiguration
 {
     public required string Issuer { get; set; }
-    public required string Audience { get; set; }
     public required string SigningKey { get; set; }
     public required int LifetimeMinutes { get; set; }
     public required int ClockSkewMinutes { get; set; }
