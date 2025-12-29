@@ -1,27 +1,44 @@
-namespace ECommerceBackend.Utils.Jwt;
+using System.ComponentModel.DataAnnotations;
 
-public class JwtAuthConfiguration
-{
-    public required string Issuer { get; set; }
-    public required string SigningKey { get; set; }
-    public required int LifetimeMinutes { get; set; }
-    public required int ClockSkewMinutes { get; set; }
-}
+namespace ECommerceBackend.Utils.Jwt;
 
 public static class RoleTypes
 {
-    public const string Client = "client";
-    public const string Admin = "admin";
+    public const string Admin = "ecommerce-admin";
 }
 
-public class JwtClaims
+/// <summary>
+/// Should not be injected in any services. For reading the access token JwtTokenContainerReader should be used.
+/// </summary>
+public class OidcConfig
 {
+    [Required]
+    public required string ClientId { get; init; }
+    [Required]
+    public required string SecretClientId { get; init; }
+    [Required]
+    public required string Audience { get; init; }
+    [Required]
     public required string Issuer { get; init; }
-    public required string Roles { get; init; }
+    [Required]
+    public required string Authority { get; init; }
 }
 
-public class ClientJwtClaims : JwtClaims
+public class InternalJwtTokenContainer()
 {
-    public required string UserId { get; init; }
-    public required string Email { get; init; }
+    public string AccessToken { get; set; } = "";
+    public DateTime ExpirationDate { get; set; }
+}
+
+public class JwtTokenReader
+{
+    private readonly InternalJwtTokenContainer _jwtTokenContainer;
+
+    public JwtTokenReader(InternalJwtTokenContainer jwtTokenContainer)
+    {
+        _jwtTokenContainer = jwtTokenContainer;
+    }
+
+    public string AccessToken => _jwtTokenContainer.AccessToken;
+    public DateTime ExpirationDate => _jwtTokenContainer.ExpirationDate;
 }
