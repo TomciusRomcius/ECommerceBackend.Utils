@@ -19,8 +19,6 @@ public class OidcConfig
     [Required]
     public required string Audience { get; init; }
     [Required]
-    public required string Issuer { get; init; }
-    [Required]
     public required string Authority { get; init; }
 }
 
