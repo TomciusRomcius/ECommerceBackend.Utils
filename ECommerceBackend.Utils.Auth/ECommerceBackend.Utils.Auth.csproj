@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Tomas.ECommerceBackend.Utils.Auth</PackageId>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <Authors>Tomas</Authors>
   </PropertyGroup>
   <PropertyGroup>
@@ -15,7 +15,7 @@
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.15.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Tomas.ECommerceBackend.Utils.Jwt" Version="1.0.1" />
+    <PackageReference Include="Tomas.ECommerceBackend.Utils.Jwt" Version="1.0.5" />
   </ItemGroup>
 
 </Project>
