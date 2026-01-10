@@ -16,7 +16,7 @@
     <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.15.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Tomas.ECommerceBackend.Utils.Jwt" Version="1.0.6" />
+    <PackageReference Include="Tomas.ECommerceBackend.Utils.Jwt" Version="1.0.6" PrivateAssets="none"/>
   </ItemGroup>
 
 </Project>
