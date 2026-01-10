@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace ECommerceBackend.Utils.Auth.Src;
+namespace ECommerceBackend.Utils.Auth;
 
 public static class AuthSetup
 {
