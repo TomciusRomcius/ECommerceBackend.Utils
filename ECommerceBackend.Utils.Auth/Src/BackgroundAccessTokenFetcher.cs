@@ -70,8 +70,11 @@ public class BackgroundAccessTokenFetcher : BackgroundService
             response.EnsureSuccessStatusCode();
             JsonElement contentJson = await response.Content.ReadFromJsonAsync<JsonElement>(cancellationToken);
             string? accessToken = contentJson.GetProperty("access_token").GetString();
+            if (accessToken == null)
+                return false;
             int expiresIn = contentJson.GetProperty("expires_in").GetInt32();
             DateTime expiresAt = DateTime.Now.AddSeconds(expiresIn - 5);
+            _jwtTokenContainer.AccessToken = accessToken;
             _jwtTokenContainer.ExpirationDate = expiresAt;
             _logger.LogDebug("Received access token for {} seconds", expiresIn);
             return true;
