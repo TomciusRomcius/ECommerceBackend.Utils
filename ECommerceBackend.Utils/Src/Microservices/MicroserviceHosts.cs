@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ECommerceBackend.Utils.Database;
+namespace ECommerceBackend.Utils.Microservices;
 
-public class MicroserviceHosts 
+public class MicroserviceHosts
 {
     [Required]
     public required string UserServiceUrl { get; set; }
