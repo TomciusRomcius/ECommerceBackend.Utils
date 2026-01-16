@@ -3,7 +3,14 @@
 public class ChargeSucceededEvent
 {
     public required string UserId { get; set; }
+    public required string OrderId { get; set; }
     public required int Amount { get; set; }
+}
+
+public class PaymentFailedEvent
+{
+    public required string UserId { get; set; }
+    public required string OrderId { get; set; }
 }
 
 public class UserAccountDeleted
