@@ -19,6 +19,7 @@ public static class QueryablePaginationExtensions
         {
             Data = data,
             TotalCount = totalCount,
+            PageSize = pageSize,
             HasPrevPage = pageNumber > 1,
             HasNextPage = pageNumber * pageSize < totalCount,
         };
