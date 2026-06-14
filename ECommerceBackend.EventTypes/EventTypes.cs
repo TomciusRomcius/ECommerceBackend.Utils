@@ -2,7 +2,8 @@
 
 public abstract class Event
 {
-    public Guid MessageId { get; set; } = Guid.NewGuid();
+    public Guid MessageId { get; } = Guid.NewGuid();
+    public required string TopicName { get; init; }
 }
 
 public class ChargeSucceededEvent : Event
@@ -84,3 +85,36 @@ public class UserAccountDeleted : Event
     public required string UserId { get; set; }
 }
 
+public class ManufacturerCreatedEvent : Event
+{
+    public required int ManufacturerId { get; set; }
+    public required string Name { get; set; }
+}
+
+public class ManufacturerUpdatedEvent : Event
+{
+    public required int ManufacturerId { get; set; }
+    public required string Name { get; set; }
+}
+
+public class ManufacturerDeletedEvent : Event
+{
+    public required int ManufacturerId { get; set; }
+}
+
+public class CategoryCreatedEvent : Event
+{
+    public required int CategoryId { get; set; }
+    public required string Name { get; set; }
+}
+
+public class CategoryUpdatedEvent : Event
+{
+    public required int CategoryId { get; set; }
+    public required string Name { get; set; }
+}
+
+public class CategoryDeletedEvent : Event
+{
+    public required int CategoryId { get; set; }
+}
