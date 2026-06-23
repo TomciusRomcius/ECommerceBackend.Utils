@@ -46,6 +46,7 @@ public class ProductDeletedEvent : Event
 
 public class ProductAddedToCartEvent : Event
 {
+    public required string UserId { get; set; }
     public required int StoreLocationId { get; set; }
     public required int ProductId { get; set; }
     public required int Quantity { get; set; }
@@ -54,6 +55,7 @@ public class ProductAddedToCartEvent : Event
 
 public class ProductCartQuantityModifiedEvent : Event
 {
+    public required string UserId { get; set; } 
     public required int StoreLocationId { get; set; }
     public required int ProductId { get; set; }
     public required int Quantity { get; set; }
@@ -62,6 +64,7 @@ public class ProductCartQuantityModifiedEvent : Event
 
 public class ProductRemovedFromCartEvent : Event
 {
+    public required string UserId { get; set; }
     public required int StoreLocationId { get; set; }
     public required int ProductId { get; set; }
     public override string TopicName => "product_removed_from_cart";
