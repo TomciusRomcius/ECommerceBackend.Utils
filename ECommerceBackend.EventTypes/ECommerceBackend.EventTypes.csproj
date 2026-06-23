@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Tomas.ECommerceBackend.EventTypes</PackageId>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <Authors>Tomas</Authors>
   </PropertyGroup>
   <PropertyGroup>

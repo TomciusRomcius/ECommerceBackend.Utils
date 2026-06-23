@@ -44,6 +44,29 @@ public class ProductDeletedEvent : Event
     public override string TopicName => "product_deleted";
 }
 
+public class ProductAddedToCartEvent : Event
+{
+    public required int StoreLocationId { get; set; }
+    public required int ProductId { get; set; }
+    public required int Quantity { get; set; }
+    public override string TopicName => "product_added_to_cart";
+}
+
+public class ProductCartQuantityModifiedEvent : Event
+{
+    public required int StoreLocationId { get; set; }
+    public required int ProductId { get; set; }
+    public required int Quantity { get; set; }
+    public override string TopicName => "product_cart_quantity_modified";
+}
+
+public class ProductRemovedFromCartEvent : Event
+{
+    public required int StoreLocationId { get; set; }
+    public required int ProductId { get; set; }
+    public override string TopicName => "product_removed_from_cart";
+}
+
 // Store service
 public class ProductAddedToStoreEvent : Event
 {
