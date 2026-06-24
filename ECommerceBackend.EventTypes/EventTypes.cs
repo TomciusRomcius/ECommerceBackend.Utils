@@ -10,7 +10,7 @@ public class ChargeSucceededEvent : Event
 {
     public required string UserId { get; set; }
     public required string OrderId { get; set; }
-    public required int Amount { get; set; }
+    public required long Amount { get; set; }
     public override string TopicName => "charge_succeeded";
 }
 
@@ -68,6 +68,12 @@ public class ProductRemovedFromCartEvent : Event
     public required int StoreLocationId { get; set; }
     public required int ProductId { get; set; }
     public override string TopicName => "product_removed_from_cart";
+}
+
+public class UserCartClearedEvent : Event
+{
+    public required string UserId { get; set; }
+    public override string TopicName => "user-cart-cleared";
 }
 
 // Store service
