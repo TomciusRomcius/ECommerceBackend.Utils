@@ -73,7 +73,7 @@ public class ProductRemovedFromCartEvent : Event
 public class UserCartClearedEvent : Event
 {
     public required string UserId { get; set; }
-    public override string TopicName => "user-cart-cleared";
+    public override string TopicName => "user_cart_cleared";
 }
 
 // Store service
