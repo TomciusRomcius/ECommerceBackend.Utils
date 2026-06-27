@@ -4,7 +4,7 @@ public class CheckoutSucceededEvent : Event
 {
     public required string UserId { get; set; }
     public required string OrderId { get; set; }
-    public required int Amount { get; set; }
+    public required long Amount { get; set; }
     public override string TopicName => "checkout_succeeded";
 }
 
